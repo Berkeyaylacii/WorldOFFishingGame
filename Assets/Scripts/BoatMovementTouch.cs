@@ -21,6 +21,7 @@ public class BoatMovementTouch : MonoBehaviour
     private float currentFuel;
 
     private bool _dragStarted;
+    private bool _isMoving;
 
     // Start is called before the first frame update
     void Start()

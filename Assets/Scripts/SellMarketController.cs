@@ -7,6 +7,7 @@ public class SellMarketController : MonoBehaviour
 {   
     public CatchFish CatchFish;
     public CollectCashAnimation CollectCashAnimation;
+    public InterstitialAdController InterstitialAdController;
 
     public GameObject[] cashes;
 
@@ -15,6 +16,7 @@ public class SellMarketController : MonoBehaviour
 
     public TextMeshPro catchedFishCountText;
 
+    public float sellCount = 0;
     public bool isSellMarketOpen = false;
     // Start is called before the first frame update
     void Start()
@@ -52,11 +54,12 @@ public class SellMarketController : MonoBehaviour
 
             CatchFish.IncreaseScore();  
             CatchFish.resetCatchedFishCount();
+            sellCount = sellCount + 1;
+            if(sellCount % 4 == 0)
+            {
+                InterstitialAdController.ShowAd();
+            }
         }
     }
 
-    void IncreaseBoatCapacity()
-    {
-
-    }
 }

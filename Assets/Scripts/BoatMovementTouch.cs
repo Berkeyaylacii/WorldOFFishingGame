@@ -9,6 +9,7 @@ public class BoatMovementTouch : MonoBehaviour
     public float rotationSpeed = 400f;
 
     public GameObject fillFuelCanvas;
+    public AudioSource boatSound;
 
     private Touch _touch;
 
@@ -47,6 +48,7 @@ public class BoatMovementTouch : MonoBehaviour
                 _isMoving = true;
                 _touchDown = _touch.position;
                 _touchUp = _touch.position;
+                boatSound.Play();
             }
         }
 
@@ -61,6 +63,7 @@ public class BoatMovementTouch : MonoBehaviour
                 _touchDown = _touch.position;
                 _isMoving = false;
                 _dragStarted = false;
+                boatSound.Stop();
             }
             gameObject.transform.rotation = Quaternion.RotateTowards(transform.rotation, CalculateRotation(), rotationSpeed * Time.deltaTime);
             gameObject.transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);

@@ -8,6 +8,7 @@ public class CatchFish : MonoBehaviour
     public FishSpawner FishSpawner;
     public FishSpawner2 FishSpawner2;
     public FishSpawner3 FishSpawner3;
+    public FishSpawner4 FishSpawner4;
 
     public GateController GateController;
 
@@ -44,6 +45,8 @@ public class CatchFish : MonoBehaviour
     public float catchedFish4Count = 0;
     public float catchedFish5Count = 0;
     public float catchedFish6Count = 0;
+    public float catchedFish7Count = 0;
+    public float catchedFish8Count = 0;
 
     public bool isCatching = false;
     public bool moveCash = false;
@@ -69,6 +72,10 @@ public class CatchFish : MonoBehaviour
         if(GateController.gate2isOpen == true)
         {
             FishSpawner3 = GameObject.FindGameObjectWithTag("FishSpawner").GetComponent<FishSpawner3>();
+        }
+        if(GateController.gate3isOpen == true)
+        {
+            FishSpawner4 = GameObject.FindGameObjectWithTag("FishSpawner").GetComponent<FishSpawner4>();
         }
         /*if(moveCash == true)
         {
@@ -147,13 +154,23 @@ public class CatchFish : MonoBehaviour
                     }
                     if (closest.name == "BluefinTuna(Clone)")
                     {
-                        FishSpawner3.fishCounter5 -= 1;  //decrease spawnedFish2 count to spawn fish again.
+                        FishSpawner3.fishCounter5 -= 1;  //decrease spawnedFish3 count to spawn fish again.
                         catchedFish5Count += 1;
                     }
-                    if (closest.name == "SawShark(Clone)")
+                    if (closest.name == "Sawshark(Clone)")
                     {
-                        FishSpawner3.fishCounter6 -= 1;  //decrease spawnedFish2 count to spawn fish again.
+                        FishSpawner3.fishCounter6 -= 1;  //decrease spawnedFish3 count to spawn fish again.
                         catchedFish6Count += 1;
+                    }
+                    if(closest.name == "JapaneseHorseMackerel(Clone)")
+                    {
+                        FishSpawner4.fishCounter7 -= 1;
+                        catchedFish7Count += 1;
+                    }
+                    if (closest.name == "BarredKnifejaw(Clone)")
+                    {
+                        FishSpawner4.fishCounter8 -= 1;
+                        catchedFish8Count += 1;
                     }
 
                     Object.Destroy(closest);
@@ -168,7 +185,7 @@ public class CatchFish : MonoBehaviour
 
     public void IncreaseScore()
     {
-        totalMoneyText.text = (float.Parse(totalMoneyText.text) + catchedFish1Count*1 + catchedFish2Count* 2 + catchedFish3Count* 3 + catchedFish4Count* 4).ToString();
+        totalMoneyText.text = (float.Parse(totalMoneyText.text) + catchedFish1Count*1 + catchedFish2Count* 2 + catchedFish3Count* 3 + catchedFish4Count* 3 + catchedFish5Count *4 + catchedFish6Count *4 +catchedFish7Count *5 + catchedFish8Count *5 ).ToString();
     }
 
     public void resetCatchedFishCount()
@@ -178,6 +195,10 @@ public class CatchFish : MonoBehaviour
         catchedFish2Count = 0;
         catchedFish3Count = 0;
         catchedFish4Count = 0;
+        catchedFish5Count = 0;
+        catchedFish6Count = 0;
+        catchedFish7Count = 0;
+        catchedFish8Count = 0;
         catchedFishText.text = catchedFishCount.ToString();
     }
 

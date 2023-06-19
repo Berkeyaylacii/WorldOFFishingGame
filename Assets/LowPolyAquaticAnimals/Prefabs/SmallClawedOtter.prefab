@@ -1558,9 +1558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246587a0ff0e667489ec54f91e181adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  range: 0
-  centrePoint: {fileID: 0}
+  agent: {fileID: -5695697422822467771}
+  range: 2
+  centrePoint: {fileID: 7983677281919828532}
 --- !u!1 &7482940287850044616
 GameObject:
   m_ObjectHideFlags: 0

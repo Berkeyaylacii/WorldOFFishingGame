@@ -13,6 +13,8 @@ public class CollectCashAnimation : MonoBehaviour
     [SerializeField] private Quaternion[] InitialRotation;
     [SerializeField] public int CashNumber;
 
+    public AudioSource cashSound;
+
     public GameObject cashPrefab;
     public bool completed = false;
     void Start()
@@ -55,8 +57,10 @@ public class CollectCashAnimation : MonoBehaviour
 
             PileOfCashParent.transform.GetChild(i).DOScale(0f, 0.3f).SetDelay(delay + 1f).SetEase(Ease.OutBack);
 
+            cashSound.Play();
             delay += 0.2f;
         }
+
     }
 
     void CountCashesByComplete()

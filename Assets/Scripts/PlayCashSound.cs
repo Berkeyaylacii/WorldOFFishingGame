@@ -16,7 +16,6 @@ public class PlayCashSound : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(this.transform.position, cash.transform.position);
-        Debug.Log(distance);
         /*if(distance < 0.5f)
         {
             cashSound.Play();

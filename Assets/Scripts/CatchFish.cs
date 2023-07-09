@@ -185,7 +185,7 @@ public class CatchFish : MonoBehaviour
 
     public void IncreaseScore()
     {
-        totalMoneyText.text = (float.Parse(totalMoneyText.text) + catchedFish1Count*1 + catchedFish2Count* 2 + catchedFish3Count* 3 + catchedFish4Count* 3 + catchedFish5Count *4 + catchedFish6Count *4 +catchedFish7Count *5 + catchedFish8Count *5 ).ToString();
+        totalMoneyText.text = (float.Parse(totalMoneyText.text) + catchedFish1Count*1 + catchedFish2Count*2 + catchedFish3Count*3 + catchedFish4Count*3 + catchedFish5Count*4 + catchedFish6Count*4 +catchedFish7Count*5 + catchedFish8Count*5 ).ToString();
     }
 
     public void resetCatchedFishCount()

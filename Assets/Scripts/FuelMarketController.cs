@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FuelMarketController : MonoBehaviour
 {
+    public BoatMovementTouch BoatMovementTouch;
+
     public GameObject fuelMarket;
 
     public GameObject boat;
@@ -18,9 +20,9 @@ public class FuelMarketController : MonoBehaviour
     {
         float distance = Vector3.Distance(boat.transform.position, fuelMarket.transform.position);
 
-        if (distance < 3f)
+        if (distance < 2.5f)
         {
-            Debug.Log("Fuel market");
+            BoatMovementTouch.fillFuel();
         }
     }
 }

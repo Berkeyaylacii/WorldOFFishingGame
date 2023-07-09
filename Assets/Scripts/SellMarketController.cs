@@ -29,12 +29,12 @@ public class SellMarketController : MonoBehaviour
     {
         float distance = Vector3.Distance(boat.transform.position, sellMarket.transform.position);
 
-        if (distance > 3f)
+        if (distance > 2.5f)
         {
             isSellMarketOpen = false;        
         }
 
-        if (distance < 3f && isSellMarketOpen == false && CatchFish.catchedFishCount > 0) //Increase the score
+        if (distance < 2.5f && isSellMarketOpen == false && CatchFish.catchedFishCount > 0) //Increase the score
         {
             isSellMarketOpen = true;
 

@@ -36,19 +36,19 @@ public class GateController : MonoBehaviour
     void Update()
     {   
         //GATES OPENS
-        if(float.Parse(boatCapacity.text.ToString()) >= 8 )
+        if(float.Parse(boatCapacity.text.ToString()) >= 14 )
         {
             gate1.SetActive(false);
             FishSpawner.GetComponent<FishSpawner2>().enabled = true;
             gate1isOpen = true;
         }
-        if (float.Parse(boatCapacity.text.ToString()) >= 11)
+        if (float.Parse(boatCapacity.text.ToString()) >= 23)
         {
             gate2.SetActive(false);
             FishSpawner.GetComponent<FishSpawner3>().enabled = true;
             gate2isOpen = true;
         }
-        if (float.Parse(boatCapacity.text.ToString()) >= 13)
+        if (float.Parse(boatCapacity.text.ToString()) >= 30)
         {
             gate3.SetActive(false);
             FishSpawner.GetComponent<FishSpawner4>().enabled = true;

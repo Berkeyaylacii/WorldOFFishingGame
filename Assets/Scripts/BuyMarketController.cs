@@ -30,12 +30,12 @@ public class BuyMarketController : MonoBehaviour
     {
         float distance = Vector3.Distance(boat.transform.position, buyMarket.transform.position);
 
-        if(distance > 3f)
+        if(distance > 2.5f)
         {
             isBuyMarketOpen = false;
         }
 
-        if (distance < 3f)
+        if (distance < 2.5f)
         {   
             if(isBuyMarketOpen == false)
             {
@@ -56,7 +56,7 @@ public class BuyMarketController : MonoBehaviour
             boatCap += 3;
             totalMoney -= increaseBoatCapPrice;
 
-            increaseBoatCapPrice += 10;
+            increaseBoatCapPrice += 20;
 
             boatCapacityText.text = boatCap.ToString();
             totalMoneyText.text = totalMoney.ToString();
@@ -77,7 +77,7 @@ public class BuyMarketController : MonoBehaviour
 
             totalMoney -= increaseSpeedPrice;
 
-            increaseSpeedPrice += 15;
+            increaseSpeedPrice += 25;
 
             BoatMovementTouch.movementSpeed = newSpeed;
             totalMoneyText.text = totalMoney.ToString();
